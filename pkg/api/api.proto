@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package netinject;
+
+option go_package = "github.com/jpittis/netinject/pkg/api";
+
+enum Direction {
+  INBOUND = 0;
+  OUTBOUND = 1;
+}
+
+message Update {
+  uint32 port = 1;
+  Direction direction = 2;
+  bool drop = 3;
+}
